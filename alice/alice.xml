@@ -28,7 +28,7 @@
         <output value="Пока-пока, $UserName!"/>
     </input>
 
-    
+   <context> 
     <input pattern="Сыграем в Рок-викторину!">
       
         <output>
@@ -50,6 +50,7 @@
         </input>    
         
     </input>
+       </context>
     
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
