@@ -29,18 +29,19 @@
     </input>
 
    
+   
+
+    
     <input pattern="*Сыграем в Рок-викторину*">
-      <context>
-        <output>
-         <item value="Отлично приступим!"/>
-         <item value="Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
-        </output>
-      <sample>
+      <context id="start">
+        <output value="Отлично приступим! Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
+        
+       <sample>
         <item value="Ozzy Osbourne"/>
         <item value="Slash"/>
         <item value="Alice Cooper"/>
       </sample>
-    
+      
         <input pattern="Alice Cooper">
         <output value="Да ты молодец!"/>
         </input>
@@ -48,32 +49,10 @@
         <input pattern="(Ozzy Osbourne|Slash)">
         <output value="Ну ты даешь! Это же Alice Cooper!"/>
         </input>    
-        </context>
+      </context>
     </input>
        
     
-    <input pattern="[* (кто|что) так*] $Text">
-        <context id="name" if="empty($UserName)"/>
-
-        <context id="wiki" if="full($UserName)">
-            <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
-                <param name="format" value="xml"/>
-                <param name="action" value="opensearch"/>
-                <param name="search" value="$Text"/>
-            </get>
-
-            <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
-            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
-
-            <output if="empty($Result)">
-                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
-                <item value="В википедии ничего не нашлось..."/>
-            </output>
-
-            <output value="$Result" if="full($Result)"/>
-        </context>
-
-
-    </input>
+    
 
 </context>
