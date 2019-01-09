@@ -3,9 +3,12 @@
     <output value="Привет! Меня зовут Алиса! А как тебя зовут?"/>
     
     <sample>
-        <item value="Кто такая Алиса"/>
         <item value="Сыграем в Рок-викторину!"/>
     </sample>
+    
+    <input pattern="* Сыграем в Рок-викторину *">
+        <context id="game"/>
+    </input>    
 
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
@@ -31,10 +34,9 @@
     </input>
 
     
-    <input pattern="* Сыграем в Рок-викторину* ">
-      <context id="start">
+   <context id="game">
         <output value="Отлично приступим! Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
-        
+       
        <sample>
         <item value="Ozzy Osbourne"/>
         <item value="Slash"/>
@@ -48,9 +50,9 @@
         <input pattern="(Ozzy Osbourne|Slash)">
         <output value="Ну ты даешь! Это же Alice Cooper!"/>
         </input>    
-      </context>
+      
     </input>
-       
+   </context>    
     
     
 
