@@ -4,10 +4,12 @@
         <sample>
         <item value="Играть в Рок-викторину!"/>
         </sample>
-        
+      
+      <context id="start_game"> 
       <input pattern="* Сыграем в Рок-викторину *">
         <context id="game"/>
          </input>       
+       </context>   
 
         <context id="game">
         <output value="Отлично приступим! Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
