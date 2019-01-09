@@ -9,8 +9,9 @@
       
       <input pattern="* Сыграем в Рок-викторину *">
         <context id="game"/>
+         </context>   
          </input>       
-       </context>   
+       
 
         <context id="game">
         <output value="Отлично приступим! Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
@@ -29,6 +30,7 @@
         <output value="Ну ты даешь! Это же Alice Cooper!"/>
         </input>    
       </context> 
+    
     </input>
       
         
