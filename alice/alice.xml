@@ -1,5 +1,7 @@
 <context>
 
+    <output value="Привет! Меня зовут Алиса! А как тебя зовут?"/>
+    
     <sample>
         <item value="Кто такая Алиса"/>
         <item value="Сыграем в Рок-викторину!"/>
@@ -28,11 +30,8 @@
         <output value="Пока-пока, $UserName!"/>
     </input>
 
-   
-   
-
     
-    <input pattern="*Сыграем в Рок-викторину*">
+    <input pattern="* Сыграем в Рок-викторину* ">
       <context id="start">
         <output value="Отлично приступим! Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
         
