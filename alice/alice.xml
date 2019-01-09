@@ -1,40 +1,15 @@
 <context>
 
-    <output value="Привет! Меня зовут Алиса! А как тебя зовут?"/>
-    
-    <sample>
-        <item value="Сыграем в Рок-викторину!"/>
-    </sample>
-    
-    <input pattern="* Сыграем в Рок-викторину *">
+    <input pattern="* привет *">
+        <sample>
+        <item value="Играть в Рок-викторину!"/>
+        </sample>
+        
+      <input pattern="* Сыграем в Рок-викторину *">
         <context id="game"/>
-    </input>    
+         </input>       
 
-    <input pattern="* (привет*|здравствуй*) *">
-        <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
-        </output>
-
-        <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А как тебя зовут?"/>
-
-            <input pattern="$Text">
-                <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Сыграем в Рок-викторину?"/>
-                <context/>
-            </input>
-        </context>
-    </input>
-    
-    <input pattern="* пока *">
-        <var name="end_session" value="javascript: true"/>
-        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
-    </input>
-
-    
-   <context id="game">
+        <context id="game">
         <output value="Отлично приступим! Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
        
        <sample>
@@ -53,7 +28,15 @@
       
     </input>
    </context>    
-    
-    
+        
+    </input>    
+ 
+    <input pattern="* пока *">
+        <var name="end_session" value="javascript: true"/>
+        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
+        <output value="Пока-пока, $UserName!"/>
+    </input>
+
+
 
 </context>
