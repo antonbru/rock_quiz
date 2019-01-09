@@ -2,7 +2,7 @@
 
     <sample>
         <item value="Кто такая Алиса"/>
-        <item value="Что такое бот"/>
+        <item value="Сыграем в Рок-викторину!"/>
     </sample>
 
     <input pattern="* (привет*|здравствуй*) *">
@@ -12,16 +12,16 @@
         </output>
 
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
+            <output value="Привет! Меня зовут Алиса! А как тебя зовут?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <output value="Приятно познакомиться, $UserName! Сыграем в Рок-викторину?"/>
                 <context/>
             </input>
         </context>
     </input>
-
+    
     <input pattern="* пока *">
         <var name="end_session" value="javascript: true"/>
         <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
@@ -47,10 +47,6 @@
             </output>
 
             <output value="$Result" if="full($Result)"/>
-
-            <input pattern="* (еще|другой вариант) *"/>
-
-            <sample value="Другой вариант"/>
         </context>
 
 
