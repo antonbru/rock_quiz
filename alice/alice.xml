@@ -1,11 +1,12 @@
 <context>
 
     <input pattern="* привет *">
-        <sample>
+      
+      <context id="start_game"> 
+       <sample>
         <item value="Играть в Рок-викторину!"/>
         </sample>
       
-      <context id="start_game"> 
       <input pattern="* Сыграем в Рок-викторину *">
         <context id="game"/>
          </input>       
@@ -27,9 +28,9 @@
         <input pattern="(Ozzy Osbourne|Slash)">
         <output value="Ну ты даешь! Это же Alice Cooper!"/>
         </input>    
-      
+      </context> 
     </input>
-   </context>    
+      
         
     </input>    
  
