@@ -11,10 +11,10 @@
 
 
         <input pattern="* Сыграем в Рок-викторину *">
+        <output value="Отлично приступим!"/>
         <context id="game"/>  
                
     
-
         <context id="game">
         <output value="Отлично приступим! Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
        
