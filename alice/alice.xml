@@ -2,14 +2,16 @@
 
     <input pattern="* привет *">
       
-      <context id="start_game"> 
-       <sample>
+       <output value="Привет! Ну что, сыграем в Рок-викторину?"/>
+
+        <sample>
         <item value="Играть в Рок-викторину!"/>
         </sample>
-      
-      <input pattern="* Сыграем в Рок-викторину *">
-        <context id="game"/>
-         </context>   
+     </input>
+
+
+        <input pattern="* Сыграем в Рок-викторину *">
+        <context id="game"/>  
          </input>       
        
 
@@ -30,9 +32,6 @@
         <output value="Ну ты даешь! Это же Alice Cooper!"/>
         </input>    
       </context> 
-    
-    </input>
-      
         
     </input>    
  
@@ -41,7 +40,6 @@
         <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
         <output value="Пока-пока, $UserName!"/>
     </input>
-
 
 
 </context>
