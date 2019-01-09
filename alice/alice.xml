@@ -28,9 +28,9 @@
         <output value="Пока-пока, $UserName!"/>
     </input>
 
-   <context> 
+   
     <input pattern="Сыграем в Рок-викторину!">
-      
+      <context>
         <output>
          <item value="Отлично приступим!"/>
          <item value="Настоящее имя этого исполнителя - Vincent Damon Furnier, но миллионам своих поклонников он известен как ..."/>
@@ -48,9 +48,9 @@
         <input pattern="(Ozzy Osbourne|Slash)">
         <output value="Ну ты даешь! Это же Alice Cooper!"/>
         </input>    
-        
+        </context>
     </input>
-       </context>
+       
     
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
